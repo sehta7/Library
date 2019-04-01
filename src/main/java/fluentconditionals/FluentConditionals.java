@@ -10,7 +10,7 @@ public class FluentConditionals {
 
     public static final Runnable doNothing = () -> {};
 
-    public static TestObject when(boolean condition){
+    public static Execute when(boolean condition){
         if (condition){
         return new ExecuteWhenTrue();
         } else{
@@ -18,7 +18,7 @@ public class FluentConditionals {
         }
     }
 
-    public static TestObject when(Supplier<Boolean> supplier){
+    public static Execute when(Supplier<Boolean> supplier){
         boolean condition = supplier.get();
 
         if (condition){

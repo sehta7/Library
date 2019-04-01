@@ -5,11 +5,11 @@ import java.util.function.Supplier;
 /**
  * @author Ola Podorska
  */
-class ExecuteWhenTrue implements TestObject{
+class ExecuteWhenTrue implements Execute {
 
     private Supplier<Integer> number;
 
-    public TestObject then(Runnable toPrint){
+    public Execute then(Runnable toPrint){
         toPrint.run();
         return this;
     }
@@ -29,7 +29,7 @@ class ExecuteWhenTrue implements TestObject{
     }
 
     @Override
-    public TestObject thenReturn(Supplier<Integer> number) {
+    public Execute thenReturn(Supplier<Integer> number) {
         this.number = number;
         return this;
     }

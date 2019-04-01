@@ -5,16 +5,19 @@ import java.util.function.Supplier;
 /**
  * @author Ola Podorska
  */
-public interface TestObject {
+public interface Execute {
 
-    TestObject then(Runnable toPrint);
+    Execute then(Runnable toPrint);
     void orElse(Runnable toPrint);
 
     void orElseThrow(RuntimeException e);
     void orElseThrow(Supplier<RuntimeException> e);
 
-    TestObject thenReturn(Supplier<Integer> number);
+    Execute thenReturn(Supplier<Integer> number);
     Integer orElse(Supplier<Integer> number);
+
+    <T> Execute thenReturn(T number);
+    <T> T orElse(T sth);
 
     Integer orElse(int i);
 

@@ -5,10 +5,10 @@ import java.util.function.Supplier;
 /**
  * @author Ola Podorska
  */
-class ExecuteWhenFalse implements TestObject{
+class ExecuteWhenFalse implements Execute {
 
     @Override
-    public TestObject then(Runnable toPrint) {
+    public Execute then(Runnable toPrint) {
         return this;
     }
 
@@ -27,7 +27,7 @@ class ExecuteWhenFalse implements TestObject{
     }
 
     @Override
-    public TestObject thenReturn(Supplier<Integer> number) {
+    public Execute thenReturn(Supplier<Integer> number) {
         return this;
     }
 
